@@ -4,6 +4,7 @@ import com.example.CourseWork2.Model.Question;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class JavaQuestionService implements QuestionService {
@@ -38,8 +39,7 @@ public class JavaQuestionService implements QuestionService {
     public Question getRandomQuestion() {
         Random random = new Random();
         int randomIdx = random.nextInt(questions.size());
-        return questions.stream()
-                .collect()
+        return new ArrayList<>(questions)
                 .get(randomIdx);
     }
 }
