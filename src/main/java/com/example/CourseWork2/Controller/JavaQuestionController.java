@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/java")
+@RequestMapping("/exam/java")
 public class JavaQuestionController {
 
     private final QuestionService questionService;
@@ -26,12 +26,12 @@ public class JavaQuestionController {
 
     @GetMapping("/remove")
     public Question remove(@RequestParam String question, @RequestParam String answer) {
-        Question questionForDelete = new Question(question, answer);
-        return questionService.remove(questionForDelete);
+        //Question questionForDelete = new Question(question, answer);
+        return questionService.remove(question, answer);
     }
 
     @GetMapping
-    public Collection<Question> get() {
+    public Collection<Question> getAll() {
         return questionService.getAll();
     }
 }

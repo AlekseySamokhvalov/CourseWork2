@@ -10,11 +10,10 @@ public interface QuestionService {
 
     Question add(Question question);
 
-    Question remove(Question question);
+    Question remove(String question, String answer);
 
     Collection<Question> getAll();
 
-    default Question getRandomQuestion() {
-        return null;
-    }
+    Question getRandomQuestion();
+
 }

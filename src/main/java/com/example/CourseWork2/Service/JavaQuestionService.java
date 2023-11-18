@@ -4,12 +4,12 @@ import com.example.CourseWork2.Model.Question;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 @Service
 public class JavaQuestionService implements QuestionService {
 
-    Set<Question> questions = new HashSet<>();
+    Collection<Question> questions = new HashSet<>();
 
     @Override
     public Question add(String question, String answer) {
@@ -25,9 +25,10 @@ public class JavaQuestionService implements QuestionService {
     }
 
     @Override
-    public Question remove(Question question) {
-        questions.remove(question);
-        return question;
+    public Question remove(String question, String answer) {
+        Question questionForRemove = new Question(question, answer);
+        questions.remove(questionForRemove);
+        return questionForRemove;
     }
 
     @Override
@@ -39,7 +40,6 @@ public class JavaQuestionService implements QuestionService {
     public Question getRandomQuestion() {
         Random random = new Random();
         int randomIdx = random.nextInt(questions.size());
-        return new ArrayList<>(questions)
-                .get(randomIdx);
+        return new ArrayList<>(questions).get(randomIdx);
     }
 }
