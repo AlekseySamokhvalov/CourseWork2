@@ -10,8 +10,10 @@ import java.util.*;
 
 @Service
 public class JavaQuestionService implements QuestionService {
+    private Random random = null;
 
     private final QuestionRepository questionRepository; //Collection<Question> questions = new HashSet<>();
+    public QuestionService questions;
 
     public JavaQuestionService(@Qualifier("javaQuestionRepository") QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
@@ -48,5 +50,14 @@ public class JavaQuestionService implements QuestionService {
         Random random = new Random();
         int randomIdx = random.nextInt(questions.size());
         return new ArrayList<>(questions).get(randomIdx);
+    }
+    // Метод создан для работы с Mokito
+    @Override
+    public Random getRandom1() {
+        if (random == null) {
+            random = new Random(20231106);
+        }
+
+        return random;
     }
 }

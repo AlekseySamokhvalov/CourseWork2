@@ -3,6 +3,7 @@ package com.example.CourseWork2.service;
 import com.example.CourseWork2.model.Question;
 
 import java.util.Collection;
+import java.util.Random;
 
 public interface QuestionService {
 
@@ -15,5 +16,6 @@ public interface QuestionService {
     Collection<Question> getAll();
 
     Question getRandomQuestion();
+    Random getRandom1();
 
 }

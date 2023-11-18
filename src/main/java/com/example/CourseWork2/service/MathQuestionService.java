@@ -11,6 +11,7 @@ import java.util.Random;
 
 @Service
 public class MathQuestionService implements QuestionService {
+    private Random random = null;
     private final QuestionRepository questionRepository;  //Collection<Question> questions = new HashSet<>();
 
     public MathQuestionService(@Qualifier("mathQuestionRepository") QuestionRepository questionRepository) {
@@ -48,5 +49,13 @@ public class MathQuestionService implements QuestionService {
         Random random = new Random();
         int randomIdx = random.nextInt(questions.size());
         return new ArrayList<>(questions).get(randomIdx);
+    }
+    @Override
+    public Random getRandom1() {
+        if (random == null) {
+            random = new Random(20231106);
+        }
+
+        return random;
     }
 }
