@@ -1,8 +1,8 @@
-package com.example.CourseWork2.Controller;
+package com.example.CourseWork2.controller;
 
-import com.example.CourseWork2.Exception.QuestionAmountException;
-import com.example.CourseWork2.Model.Question;
-import com.example.CourseWork2.Service.ExaminerService;
+import com.example.CourseWork2.exception.QuestionAmountException;
+import com.example.CourseWork2.model.Question;
+import com.example.CourseWork2.service.ExaminerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

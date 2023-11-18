@@ -1,7 +1,8 @@
-package com.example.CourseWork2.Controller;
+package com.example.CourseWork2.controller;
 
-import com.example.CourseWork2.Model.Question;
-import com.example.CourseWork2.Service.QuestionService;
+import com.example.CourseWork2.model.Question;
+import com.example.CourseWork2.service.QuestionService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +16,7 @@ public class JavaQuestionController {
 
     private final QuestionService questionService;
 
-    public JavaQuestionController(QuestionService questionService) {
+    public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService questionService) {
         this.questionService = questionService;
     }
 

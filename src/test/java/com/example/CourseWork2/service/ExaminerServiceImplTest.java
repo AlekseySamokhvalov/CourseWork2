@@ -1,6 +1,6 @@
-package com.example.CourseWork2.Service;
+package com.example.CourseWork2.service;
 
-import com.example.CourseWork2.Model.Question;
+import com.example.CourseWork2.model.Question;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
